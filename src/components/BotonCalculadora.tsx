@@ -6,17 +6,18 @@ interface BotonesCalculadora {
     texto:string,
     // color?: "#2D2D2D" | "#FF9427",
     colorBoton?: string,
-    ancho?: boolean
+    ancho?: boolean,
+    accion: (numeroTexto:string) => void,
 }
 
 // type color {
 //     stri
 // }
 
-const BotonCalculadora = ({texto, colorBoton = "#2D2D2D", ancho = false}:BotonesCalculadora) => {
+const BotonCalculadora = ({texto, colorBoton = "#2D2D2D", ancho = false, accion}:BotonesCalculadora) => {
   return (
 
-    <TouchableOpacity>
+    <TouchableOpacity onPress={()=> accion(texto)}>
 
         <View style={
                 [styles.boton, {backgroundColor: colorBoton, width: (ancho ? 120 : 60)}]
