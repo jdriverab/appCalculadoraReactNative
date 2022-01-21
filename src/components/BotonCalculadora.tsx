@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import {styles} from '../theme/appTheme'
+import {styles} from '../theme/appTheme';
 
 interface BotonesCalculadora {
     texto:string,
@@ -9,10 +9,6 @@ interface BotonesCalculadora {
     ancho?: boolean,
     accion: (numeroTexto:string) => void,
 }
-
-// type color {
-//     stri
-// }
 
 const BotonCalculadora = ({texto, colorBoton = "#2D2D2D", ancho = false, accion}:BotonesCalculadora) => {
   return (
@@ -24,7 +20,7 @@ const BotonCalculadora = ({texto, colorBoton = "#2D2D2D", ancho = false, accion}
             }>
             <Text style={
                 [styles.botonTexto, {color: (colorBoton === "#9B9B9B" ? "black" : "white") }]
-                }>
+                } adjustsFontSizeToFit>
                     
                 {texto}
             </Text>
